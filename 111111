@@ -1,12 +1,33 @@
+requests.
+4Name the new theme directory:
+rosha-art-gallery
+NOTE: This is NOT the name of the Child Theme. You can customize the name, description, etc. in step 7, below.
+5Select where to save new styles:
+ Primary Stylesheet (style.css)
+Save new custom styles directly to the Child Theme primary stylesheet, replacing the existing values. The primary stylesheet will load in the order set by the theme.
 
-Select an action: CREATE a new Child Theme
-Install a new customizable child theme using an installed theme as a parent.
+  Separate Stylesheet
+Save new custom styles to a separate stylesheet and combine any existing child theme styles with the parent to form baseline. Select this option if you want to preserve the existing child theme styles instead of overwriting them. This option also allows you to customize stylesheets that load after the primary stylesheet.
 
-2Select a Parent Theme:
-Click here to save a backup of the selected theme.
+6Select Parent Theme stylesheet handling:
+ Use the WordPress style queue.
+Let the Configurator determine the appropriate actions and dependencies and update the functions file automatically.
 
-GeneratePress
- 3Analyze Parent Theme
-Click "Analyze" to determine stylesheet dependencies and other potential issues.
+ Use @import in the child theme stylesheet.
+Only use this option if the parent stylesheet cannot be loaded using the WordPress style queue. Using @import is not recommended.
 
-  
+ Do not add any parent stylesheet handling.
+Select this option if this theme already handles the parent theme stylesheet or if the parent theme's style.css file is not used for its appearance.
+
+Advanced handling options:
+ Ignore parent theme stylesheets.
+Do not load or parse the parent theme styles. Only use this option if the Child Theme uses a Framework like Genesis and uses only child theme stylesheets for its appearance.
+
+Do not force dependency for these stylesheet handles:
+generate-style
+By default, the order of stylesheets that load prior to the primary stylesheet is preserved by treating them as dependencies. In some cases, stylesheets are detected in the preview that are not used site-wide. If necessary, dependency can be removed for specific stylesheets above.
+
+7Customize the Child Theme Name, Description, Author, Version, etc.:Click to Edit Child Theme Attributes  
+8Copy Menus, Widgets and other Customizer Settings from the Parent Theme to the Child Theme: This option replaces the Child Theme's existing Menus, Widgets and other Customizer Settings with those from the Parent Theme. You should only need to use this option the first time you configure a Child Theme.
+IMPORTANT: Some "premium" themes use unsupported options that cannot be copied with the free verson of CTC. If you purchased this theme from a website such as "ThemeForest," child themes may not work correctly. Click the "Upgrade" tab for more information.
+9Click to run the Configurator:
