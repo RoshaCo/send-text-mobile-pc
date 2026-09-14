@@ -1,33 +1,101 @@
-requests.
-4Name the new theme directory:
-rosha-art-gallery
-NOTE: This is NOT the name of the Child Theme. You can customize the name, description, etc. in step 7, below.
-5Select where to save new styles:
- Primary Stylesheet (style.css)
-Save new custom styles directly to the Child Theme primary stylesheet, replacing the existing values. The primary stylesheet will load in the order set by the theme.
+<?php
+/**
+ * The base configuration for WordPress
+ *
+ * The wp-config.php creation script uses this file during the installation.
+ * You don't have to use the web site, you can copy this file to "wp-config.php"
+ * and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * Database settings
+ * * Secret keys
+ * * Database table prefix
+ * * Localized language
+ * * ABSPATH
+ *
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
+ *
+ * @package WordPress
+ */
 
-  Separate Stylesheet
-Save new custom styles to a separate stylesheet and combine any existing child theme styles with the parent to form baseline. Select this option if you want to preserve the existing child theme styles instead of overwriting them. This option also allows you to customize stylesheets that load after the primary stylesheet.
+// ** Database settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'roshair_wp_38ikx' );
 
-6Select Parent Theme stylesheet handling:
- Use the WordPress style queue.
-Let the Configurator determine the appropriate actions and dependencies and update the functions file automatically.
+/** Database username */
+define( 'DB_USER', 'roshair_wp_pxbvx' );
 
- Use @import in the child theme stylesheet.
-Only use this option if the parent stylesheet cannot be loaded using the WordPress style queue. Using @import is not recommended.
+/** Database password */
+define( 'DB_PASSWORD', 'Hamid1287#' );
 
- Do not add any parent stylesheet handling.
-Select this option if this theme already handles the parent theme stylesheet or if the parent theme's style.css file is not used for its appearance.
+/** Database hostname */
+define( 'DB_HOST', 'localhost:3306' );
 
-Advanced handling options:
- Ignore parent theme stylesheets.
-Do not load or parse the parent theme styles. Only use this option if the Child Theme uses a Framework like Genesis and uses only child theme stylesheets for its appearance.
+/** Database charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
 
-Do not force dependency for these stylesheet handles:
-generate-style
-By default, the order of stylesheets that load prior to the primary stylesheet is preserved by treating them as dependencies. In some cases, stylesheets are detected in the preview that are not used site-wide. If necessary, dependency can be removed for specific stylesheets above.
+/** The database collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
 
-7Customize the Child Theme Name, Description, Author, Version, etc.:Click to Edit Child Theme Attributes  
-8Copy Menus, Widgets and other Customizer Settings from the Parent Theme to the Child Theme: This option replaces the Child Theme's existing Menus, Widgets and other Customizer Settings with those from the Parent Theme. You should only need to use this option the first time you configure a Child Theme.
-IMPORTANT: Some "premium" themes use unsupported options that cannot be copied with the free verson of CTC. If you purchased this theme from a website such as "ThemeForest," child themes may not work correctly. Click the "Upgrade" tab for more information.
-9Click to run the Configurator:
+/**#@+
+ * Authentication unique keys and salts.
+ *
+ * Change these to different unique phrases! You can generate these using
+ * the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}.
+ *
+ * You can change these at any point in time to invalidate all existing cookies.
+ * This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
+define('AUTH_KEY', 'LPJk!yDa_cC2VA9hiL1*G_W|8dKb6(~S8-P20x7P&K6N3AC:ILJ2H]lB!DAmG[4H');
+define('SECURE_AUTH_KEY', '8dTHTcT[h[-je:O#mtLxh0h7uyq[i0@nzPTkYa!@j8+8]J;Ul(UInqip%OPOEWr%');
+define('LOGGED_IN_KEY', 'exa2HD9Og@P0%4cwjLYCC]wU/9!*B%!f-@GM:jaakbE5GvLRmnu&Da*PNF-d]YRl');
+define('NONCE_KEY', 'XVpSPSH:jvU*u_9d*AFa|_5R-d~I9-9akGm8H3OVF@@D11(9AiSdP3~6f2jt]!Fv');
+define('AUTH_SALT', 'hn27mM:c5;ZEPa-ngUIFv(4c4q8TxxHQ)wk[%L:!srrH&f#;o*QFgfh;aqgNlAAF');
+define('SECURE_AUTH_SALT', 'sr(X2TxBha1@|71NGNKD#&POyqeu**/mCapTb@Rb_TSCykenJa@@i~635Xb!c4vJ');
+define('LOGGED_IN_SALT', 'u1Tol7L9MRLzaBd|p[v:mxYXyppe8W*Wn8s)GjJe/4qBflbW4ZeH7afN-[Y*N#t-');
+define('NONCE_SALT', 'x1]75I(I9Bmgih&MxI/F%GP!dU/IDt&hOSg-aX&ieI[jQhQDfa3O!AZwwG!prnE/');
+
+
+/**#@-*/
+
+/**
+ * WordPress database table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix = 'TTd9ml_';
+
+/* Add any custom values between this line and the "stop editing" line. */
+
+define('WP_ALLOW_MULTISITE', true);
+define('WP_AUTO_UPDATE_CORE', false);
+
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the documentation.
+ *
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
+ */
+if ( ! defined( 'WP_DEBUG' ) ) {
+	define( 'WP_DEBUG', false );
+}
+
+/* That's all, stop editing! Happy publishing. */
+
+/** Absolute path to the WordPress directory. */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', __DIR__ . '/' );
+}
+
+/** Sets up WordPress vars and included files. */
+require_once ABSPATH . 'wp-settings.php';
